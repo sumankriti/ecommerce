@@ -1,0 +1,10 @@
+{
+  "name": "features-auth",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/features/auth/src",
+  "tags": [
+    "scope:storefront",
+    "type:feature"
+  ]
+}
