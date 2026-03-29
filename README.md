@@ -2,6 +2,20 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
 
+## SonarLint
+
+This repo includes a base Sonar configuration in `sonar-project.properties` and a workspace recommendation for the VS Code SonarLint extension.
+
+If you use VS Code:
+
+```bash
+code .
+```
+
+Then install the recommended `SonarQube for IDE (SonarLint)` extension when prompted, or search for `SonarSource.sonarlint-vscode` in the Extensions panel.
+
+The shared config is set up to analyze the Angular/Nx workspace under `apps/` and `libs/`, plus the Node services under `nodejs/src/`, while excluding generated output like `node_modules`, `dist`, and coverage folders.
+
 ## Development server
 
 To start a local development server, run:

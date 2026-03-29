@@ -1,0 +1,63 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+
+<mat-dialog-content>
+  <div class="input-field">
+    <mat-form-field class="example-form-field">
+      <mat-label>Search user by name</mat-label>
+      <input
+        matInput
+        type="text"
+        [ngModel]="value()"
+        (ngModelChange)="updateValue($event)"
+        placeholder="Try Leanne or Ervin"
+      />
+
+      @if (value().length) {
+        <button matSuffix matIconButton aria-label="Clear" (click)="clearValue()">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+    </mat-form-field>
+  </div>
+
+  @if (activeSearchTerm()) {
+    <div class="search-state">
+      Latest <code>switchMap</code> search term: <strong>{{ activeSearchTerm() }}</strong>
+      @if (matchedUser(); as user) {
+        <div class="search-state__meta">
+          Showing posts for {{ user.name }} ({{ user.email }})
+        </div>
+      }
+    </div>
+  }
+
+  @if (isLoading()) {
+    <div class="search-state">Searching users and loading their posts...</div>
+  } @else if (errorMessage()) {
+    <div class="search-state search-state--error">{{ errorMessage() }}</div>
+  } @else if (value().trim().length === 0) {
+    <div class="search-state">
+      Start typing to trigger a real <code>switchMap</code> API search.
+    </div>
+  } @else if (postsWithMatchedUsers.length === 0) {
+    <div class="search-state">
+      No matching users or posts found for "{{ value() }}".
+    </div>
+  } @else {
+    <div class="result-list">
+      @for (post of postsWithMatchedUsers; track post.id) {
+        <article class="result-card">
+          <p class="result-card__meta">
+            {{ post.matchedUser?.name }} · {{ post.matchedUser?.email }}
+          </p>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.body }}</p>
+        </article>
+      }
+    </div>
+  }
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-flat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

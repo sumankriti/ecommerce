@@ -1,0 +1,12 @@
+{
+  "name": "@ecommerce/core",
+  "version": "0.1.0",
+  "description": "Shared auth, guards, interceptors, and application services for the ecommerce workspace.",
+  "sideEffects": false,
+  "peerDependencies": {
+    "@angular/common": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "@angular/router": "^21.0.0",
+    "rxjs": "^7.8.0"
+  }
+}

@@ -13,7 +13,34 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve"
+    "module": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@ecommerce/core": [
+        "libs/core/src/index.ts"
+      ],
+      "@ecommerce/core/*": [
+        "libs/core/src/*"
+      ],
+      "@ecommerce/core/interceptors": [
+        "libs/core/src/interceptors.ts"
+      ],
+      "@ecommerce/core/guards": [
+        "libs/core/src/guards.ts"
+      ],
+      "@ecommerce/shared-ui": [
+        "libs/shared/ui/src/index.ts"
+      ],
+      "@ecommerce/features-auth": [
+        "libs/features/auth/src/index.ts"
+      ],
+      "@ecommerce/features-dashboard": [
+        "libs/features/dashboard/src/index.ts"
+      ],
+      "@ecommerce/features-rxjs": [
+        "libs/features/rxjs/src/index.ts"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

@@ -1,0 +1,52 @@
+.app-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle at top left, rgba(0, 140, 255, 0.16), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(255, 138, 61, 0.18), transparent 28%),
+    linear-gradient(180deg, #f4f8fc 0%, #eef4f9 100%);
+}
+
+.app-bg__geo {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(18px);
+  opacity: 0.9;
+}
+
+.app-bg__geo--1 {
+  top: -8rem;
+  left: -6rem;
+  width: 22rem;
+  height: 22rem;
+  background: rgba(0, 128, 255, 0.12);
+}
+
+.app-bg__geo--2 {
+  right: -7rem;
+  top: 20%;
+  width: 18rem;
+  height: 18rem;
+  background: rgba(255, 153, 0, 0.12);
+}
+
+.app-bg__geo--3 {
+  left: 28%;
+  bottom: -10rem;
+  width: 24rem;
+  height: 24rem;
+  background: rgba(12, 190, 160, 0.1);
+}
+
+.app-bg__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(16, 24, 40, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 24, 40, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6), transparent 92%);
+}

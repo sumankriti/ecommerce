@@ -6,21 +6,22 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "ecommerce": {
+    "storefront": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "",
-      "sourceRoot": "src",
+      "root": "apps/storefront",
+      "sourceRoot": "apps/storefront/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "src/main.ts",
+            "browser": "apps/storefront/src/main.ts",
+            "index": "apps/storefront/src/index.html",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -30,7 +31,7 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "apps/storefront/src/styles.scss"
             ]
           },
           "configurations": {
@@ -61,10 +62,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ecommerce:build:production"
+              "buildTarget": "storefront:build:production"
             },
             "development": {
-              "buildTarget": "ecommerce:build:development"
+              "buildTarget": "storefront:build:development"
             }
           },
           "defaultConfiguration": "development"
