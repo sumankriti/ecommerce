@@ -1,0 +1,15 @@
+  <mat-dialog-content>
+  <mat-dialog-actions>
+    <button matButton="elevated" (click)="callSwitchMap()">Call API</button>
+    
+    <mat-form-field class="example-form-field">
+        <mat-label>Clearable input</mat-label>
+        <input matInput type="text" (input)="inputChange($event.target.value)">
+        @if (value) {
+          <button matSuffix matIconButton aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        }
+      </mat-form-field>
+  </mat-dialog-actions>
+  <mat-dialog-content>

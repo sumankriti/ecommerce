@@ -7,6 +7,10 @@ import { RxjsService, RxjsTopic } from '../services/rxjs.service';
 import { RxjsTopicDialogComponent } from './rxjs-modal.component';
 import { SwitchMapDialogComponent } from './switchmap-modal/switchmap-modal.component';
 import { SwitchMapComponent2 } from './switcmap-modal2/switchmap-modal2.component';
+import { SwitchMap3Component } from './switchmap3-modal/switchmap3.component';
+import { ConcatMapModalComponent } from './concatmap-modal/concatmap-modal.component';
+import { MergeMapModalComponent } from './mergemap-modal/mergemap-modal.compoent';
+import { ExhaustMapModalComponent } from './exhaustmap-modal/exhaustmap-modal.component';
 
 @Component({
   selector: 'feature-rxjs',
@@ -245,9 +249,10 @@ export class RxjsComponent {
   private readonly topicDialogComponents: Record<string, Type<unknown>> = {
     switchmap: SwitchMapDialogComponent,
     switchmap2: SwitchMapComponent2,
-    concatmap: RxjsTopicDialogComponent,
-    mergemap: RxjsTopicDialogComponent,
-    exhaustmap: RxjsTopicDialogComponent,
+    switchmap3: SwitchMap3Component,
+    concatmap: ConcatMapModalComponent,
+    mergemap: MergeMapModalComponent,
+    exhaustmap: ExhaustMapModalComponent,
   };
 
   protected readonly topics = this.rxjsService.getTopics();

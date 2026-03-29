@@ -40,9 +40,22 @@ export class RxjsService {
       warning: 'Avoid it when every request must complete, because earlier inner streams are cancelled.',
     },
     {
+      id: 'switchmap3',
+      title: 'switchMap3',
+      componentName: 'SwitchMapComponent3',
+      summary: 'Use the latest value and cancel the previous inner stream.',
+      analogy: 'Like a live search box where every new keystroke makes the previous request irrelevant.',
+      useCases: [
+        'Typeahead search requests',
+        'Route-param-driven HTTP calls',
+        'Latest-only refresh behavior',
+      ],
+      warning: 'Avoid it when every request must complete, because earlier inner streams are cancelled.',
+    },
+    {
       id: 'concatmap',
       title: 'concatMap',
-      componentName: 'ConcatMapComponent',
+      componentName: 'ConcatMapModalComponent',
       summary: 'Queue source values and process them one at a time in order.',
       analogy: 'Like a checkout line where each customer waits for the previous one to finish.',
       useCases: [
@@ -55,7 +68,7 @@ export class RxjsService {
     {
       id: 'mergemap',
       title: 'mergeMap',
-      componentName: 'MergeMapComponent',
+      componentName: 'MergeMapModalComponent',
       summary: 'Run multiple inner streams in parallel without waiting for order.',
       analogy: 'Like assigning several workers to different tasks at the same time.',
       useCases: [
@@ -68,7 +81,7 @@ export class RxjsService {
     {
       id: 'exhaustmap',
       title: 'exhaustMap',
-      componentName: 'ExhaustMapComponent',
+      componentName: 'ExhaustMapModalComponent',
       summary: 'Ignore new source values while the current inner stream is still active.',
       analogy: 'Like a submit button that ignores repeated clicks until the first request finishes.',
       useCases: [
