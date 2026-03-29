@@ -2,3 +2,7 @@
 	path = libs/core
 	url = https://github.com/sumankriti/ecommerce.git
 	branch = core
+[submodule "libs/features"]
+	path = libs/features
+	url = https://github.com/sumankriti/ecommerce.git
+	branch = features
