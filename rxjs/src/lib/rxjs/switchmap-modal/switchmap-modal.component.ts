@@ -90,7 +90,7 @@ export class SwitchMapDialogComponent {
                 });
               }
 
-              return this.switchMapService.getPostsByUserId(matchedUser.id).pipe(
+              return this.switchMapService.getPostsByUserIdMatchedUser(matchedUser.id).pipe(
                 map((posts) => ({
                   matchedUser,
                   posts: posts.map((post) => ({
